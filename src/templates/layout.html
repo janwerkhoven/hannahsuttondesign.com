@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="copyright" content="Copyright 2016 all rights reserved by Richard Verheyen">
+    <meta name="developer" content="Richard Verheyen richard.verheyen@gmail.com">
+    <meta name="robots" content="index, follow">
+    {{#block "meta"}}
+      <title>Hannah Sutton Design</title>
+      <meta name="description" content="Hannah Sutton Design Website"> {{/block}}
+
+    <link href="/assets/css/main.min.css" rel="stylesheet" type="text/css">
+    <script src="/assets/js/main.js"></script>
+    <script type="text/javascript">
+      var feed = new Instafeed({
+        get: 'user',
+        userId: '1437536913',
+        accessToken: '1437536913.1677ed0.02677d6ce703465e80498fcd44f92c54',
+        limit: 10,
+        resolution: 'standard_resolution'
+      });
+      feed.run();
+    </script>
+
+    {{> favicons}}
+
+  </head>
+
+  <body id="{{#block "body-id"}}{{/block}}" class="{{#block "body-class"}}{{/block}}">
+
+    {{> header}} {{> menu}}
+
+    <main>
+      {{#block "main"}}{{/block}}
+    </main>
+
+    {{> footer}}
+
+    <div id="outdated"></div>
+    <script src="/assets/js/outdated-browser.min.js" type="text/javascript"></script>
+
+  </body>
+
+</html>

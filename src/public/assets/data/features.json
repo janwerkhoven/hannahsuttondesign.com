@@ -1,0 +1,8 @@
+{
+"features": [{
+  "slug": "cosmetic-avenue",
+  "description": "Branding for a new cosmetic surgery clinic in Melbourne",
+  "services": ["Logo", "Signage", "Website Elements", "Social Media Design", "Print Collateral"],
+  "image1":   "<img src=\"/assets/img/landing/cosmetic-avenue/logo@2x.png\">"
+  }]
+}
