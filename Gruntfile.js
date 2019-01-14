@@ -27,7 +27,7 @@ module.exports = function(grunt) {
           "src/templates/**/*.json",
           "src/templates/layout.html "
         ],
-        tasks: ["handlebarslayouts", "sitemap"]
+        tasks: ["handlebarslayouts"]
       },
       sass: {
         files: ["src/styles/**/*.scss"],
@@ -121,7 +121,13 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          "temp/main.min.js": ["src/js/main.js"]
+          "temp/js/main.min.js": ["temp/js/main.js"],
+          "temp/js/localstorage_safari_private_shim.min.js": [
+            "src/js/localstorage_safari_private_shim.js"
+          ],
+          "dist/assets/js/outdated-browser.min.js": [
+            "src/js/outdated-browser.js"
+          ]
         }
       }
     },
@@ -130,11 +136,25 @@ module.exports = function(grunt) {
       options: {
         separator: ";\n\n"
       },
-      dist: {
+      raw: {
+        files: {
+          "dist/assets/js/main.js": [
+            "bower_components/jquery/dist/jquery.min.js",
+            "bower_components/velocity/velocity.min.js",
+            "bower_components/instafeed.js/instafeed.min.js",
+            "bower_components/countUp.js/dist/countUp.min.js",
+            "src/js/main.js"
+          ]
+        }
+      },
+      minified: {
         files: {
           "dist/assets/js/main.min.js": [
-            "src/js/vendor/jquery.min.js",
-            "temp/main.min.js"
+            "bower_components/jquery/dist/jquery.min.js",
+            "bower_components/velocity/velocity.min.js",
+            "bower_components/instafeed.js/instafeed.min.js",
+            "bower_components/countUp.js/dist/countUp.min.js",
+            "temp/js/main.min.js"
           ]
         }
       }
@@ -160,48 +180,48 @@ module.exports = function(grunt) {
           }
         ]
       }
-    },
+    }
 
     // BUG: Adds /dist to every URL...
-    xml_sitemap: {
-      custom_options: {
-        options: {
-          siteRoot: "https://hannahsuttondesign.com/",
-          changefreq: "monthly",
-          priority: "0.5",
-          dest: "dist/"
-        },
-        files: [
-          {
-            expand: true,
-            cwd: "dist/",
-            src: ["**/*.html", "!**/google*.html"]
-          }
-        ]
-      }
-    },
+    // xml_sitemap: {
+    //   custom_options: {
+    //     options: {
+    //       siteRoot: "https://www.hannahsuttondesign.com/",
+    //       changefreq: "monthly",
+    //       priority: "0.5",
+    //       dest: "dist/"
+    //     },
+    //     files: [
+    //       {
+    //         expand: true,
+    //         cwd: "dist/",
+    //         src: ["**/*.html", "!**/google*.html"]
+    //       }
+    //     ]
+    //   }
+    // },
 
     // Temporary until sitemap bug is fixed
-    replace: {
-      sitemap_dist: {
-        src: "dist/sitemap.xml",
-        dest: "dist/sitemap.xml",
-        replacements: [
-          {
-            from: "/dist/",
-            to: "/"
-          },
-          {
-            from: "<feed>",
-            to: ""
-          },
-          {
-            from: "</feed>",
-            to: ""
-          }
-        ]
-      }
-    }
+    // replace: {
+    //   sitemap_dist: {
+    //     src: "dist/sitemap.xml",
+    //     dest: "dist/sitemap.xml",
+    //     replacements: [
+    //       {
+    //         from: "/dist/",
+    //         to: "/"
+    //       },
+    //       {
+    //         from: "<feed>",
+    //         to: ""
+    //       },
+    //       {
+    //         from: "</feed>",
+    //         to: ""
+    //       }
+    //     ]
+    //   }
+    // }
   });
 
   // load tasks
@@ -221,16 +241,18 @@ module.exports = function(grunt) {
 
   // commands
   grunt.registerTask("default", ["build", "serve"]);
-  // grunt.registerTask('build', ['clean:dist', 'copy', 'handlebarslayouts', 'sass', 'postcss', 'jshint', 'uglify', 'concat', 'sitemap', 'clean:temp']);
   grunt.registerTask("build", [
     "clean:dist",
     "copy",
     "handlebarslayouts",
     "sass",
     "postcss",
-    "sitemap",
+    "jshint",
+    "uglify",
+    "concat",
+    // "sitemap",
     "clean:temp"
   ]);
   grunt.registerTask("serve", ["connect", "watch"]);
-  grunt.registerTask("sitemap", ["xml_sitemap", "replace:sitemap_dist"]);
+  // grunt.registerTask("sitemap", ["xml_sitemap", "replace:sitemap_dist"]);
 };
