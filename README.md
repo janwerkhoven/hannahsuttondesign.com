@@ -12,8 +12,8 @@ The flagship [website](http://www.hannahsuttondesign.com/) for Hannah Sutton, an
 
 #### Setup
 1. Make sure you have [Grunt](http://gruntjs.com/getting-started), [NPM](https://nodejs.org/en/download/) and [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed globally
-2. `git clone https://github.com/richardverheyen/i-make-this-look-good.git ~richardverheyen/i-make-this-look-good`
-3. `cd ~/richardverheyen/i-make-this-look-good`
+2. `git clone https://github.com/richardverheyen/hannahsuttondesign.com.git ~richardverheyen/hannahsuttondesign.com`
+3. `cd ~/richardverheyen/hannahsuttondesign.com`
 4. `npm install; bower install`
 5. `grunt`
 5. Go to [http://localhost:9000/](http://localhost:9000/)

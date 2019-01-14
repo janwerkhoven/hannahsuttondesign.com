@@ -5,9 +5,7 @@ header {
   width: 100vw;
   height: 80px;
   z-index: 5;
-  &.opaque {
-    background-color: black;
-  }
+  transition: top ease-in-out 800ms;
   > div {
     position: relative;
     display: flex;
@@ -17,9 +15,12 @@ header {
     height: 100%;
     > div {
       position: absolute;
+
     }
     #menu-link {
       left: 0;
+      top: 50%;
+      transform: translateY(-50%);
       margin-left: 20px;
       z-index: 3;
       transition: all 200ms fade-in-out;
@@ -44,7 +45,8 @@ header {
     }
     #logo {
       left: 50%;
-      transform: translateX(-50%);
+      top: 50%;
+      transform: translate(-50%, -50%);
       a {
         display: flex;
         position: relative;
@@ -58,15 +60,22 @@ header {
           transition: all ease-out 800ms;
         }
         img {
-          height: 50px;
+          height: 52px;
           z-index: 3;
+          &:hover {
+            animation: milkshake 1.8s cubic-bezier(.36,.07,.19,.97) 0.2s infinite both;
+            transform: translate3d(0, 0, 0);
+            backface-visibility: hidden;
+            perspective: 1000px;
+          }
         }
         #logo-left {
+          width: 125px;
           padding-right: 8px;
-
         }
         #logo-right {
-          padding-left: 10px;
+          width: 125px;
+          padding-left: 8px;
         }
         > div {
           display: none;
@@ -121,6 +130,8 @@ header {
     #social-media {
       display: flex;
       right: 0;
+      top: 50%;
+      transform: translateY(-50%);
       margin-right: 20px;
       a {
         margin: 5px;
@@ -135,6 +146,9 @@ header {
             padding: 6px;
             width: 18px;
             height: 18px;
+          }
+          @media (max-width: 500px) {
+            padding: 4px;
           }
         }
       }
