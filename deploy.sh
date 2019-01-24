@@ -14,5 +14,5 @@ echo "----------"
 echo "scp install.sh deploy@server-singapore.nabu.io:/var/www/hannahsuttondesign.com"
 scp install.sh deploy@server-singapore.nabu.io:/var/www/hannahsuttondesign.com
 echo "----------"
-echo 'ssh deploy@server-singapore.nabu.io "cd /var/www/hannahsuttondesign.com/install.sh $branch $revision"'
-ssh deploy@server-singapore.nabu.io "cd /var/www/hannahsuttondesign.com/install.sh $branch $revision"
+echo 'ssh deploy@server-singapore.nabu.io "/var/www/hannahsuttondesign.com/install.sh $branch $revision"'
+ssh deploy@server-singapore.nabu.io "/var/www/hannahsuttondesign.com/install.sh $branch $revision"
