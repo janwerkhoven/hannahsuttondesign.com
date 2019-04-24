@@ -31,7 +31,6 @@
     "grunt-xml-sitemap": "^0.2.0",
     "gruntify-eslint": "^3.1.0",
     "handlebars-helpers": "^0.5.8",
-    "instafeed.js": "^1.4.1",
     "jit-grunt": "^0.10.0",
     "load-grunt-tasks": "^3.5.2",
     "node-sass": "^4.11.0",
