@@ -1,0 +1,90 @@
+<script>
+  console.log('listen for DOMContentLoaded')
+  window.addEventListener('DOMContentLoaded', function () {
+    var preloader = document.getElementById("preloader");
+    preloader.outerHTML = "";
+    delete preloader;
+  });
+</script>
+
+<style>
+  #preloader {
+    z-index: 10;
+    display: block;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #EAE8E5;
+    z-index: 10;
+    display: -webkit-box;
+    display: flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  #preloader img {
+    -webkit-animation: milkshake 1.8s cubic-bezier(.36,.07,.19,.97) 0.2s infinite both;
+    animation: milkshake 1.8s cubic-bezier(.36,.07,.19,.97) 0.2s infinite both;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+  }
+  @-webkit-keyframes milkshake {
+    45%,
+    5% {
+      -webkit-transform: translate3d(-1px, 0, 0);
+      transform: translate3d(-1px, 0, 0);
+    }
+    10%,
+    40% {
+      -webkit-transform: translate3d(2px, 0, 0);
+      transform: translate3d(2px, 0, 0);
+    }
+    15%,
+    25%,
+    35% {
+      -webkit-transform: translate3d(-4px, 0, 0);
+      transform: translate3d(-4px, 0, 0);
+    }
+    20%,
+    30% {
+      -webkit-transform: translate3d(4px, 0, 0);
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+  @keyframes milkshake {
+    45%,
+    5% {
+      -webkit-transform: translate3d(-1px, 0, 0);
+      transform: translate3d(-1px, 0, 0);
+    }
+    10%,
+    40% {
+      -webkit-transform: translate3d(2px, 0, 0);
+      transform: translate3d(2px, 0, 0);
+    }
+    15%,
+    25%,
+    35% {
+      -webkit-transform: translate3d(-4px, 0, 0);
+      transform: translate3d(-4px, 0, 0);
+    }
+    20%,
+    30% {
+      -webkit-transform: translate3d(4px, 0, 0);
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+</style>

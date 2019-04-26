@@ -1,33 +1,58 @@
-# Hannah Sutton Design
+# Red Dust website
 
-#### What
+### What
 
-The flagship [website](http://www.hannahsuttondesign.com/) for Hannah Sutton, an artist and graphic designer based in Melbourne, Australia
+The [website](http://www.hannahsuttondesign.com/) of Hannah Sutton, an artist and graphic designer based in Melbourne, Australia.
 
-#### Highlights
+### Highlights
 
-- Built with Grunt, Handlebars, SASS, Atom & Git
-- Mobile responsive & retina-ready
-- Served on SSD Ubuntu Nginx servers
-- Design by Hannah Sutton
-- Code by [Richard Verheyen](https://github.com/richardverheyen) and [Jan Werkhoven](https://github.com/janwerkhoven)
+- Design by [Hannah Sutton](http://hannahsuttondesign.com/)
+- Code by [Jan Werkhoven](https://github.com/janwerkhoven) and [Richard Verheyen](https://github.com/richardverheyen)
+- Built with Gulp 4, Nunjucks, SASS, JS, Atom and Git
+- 100% Mobile responsive
+- SSL encryption (HTTPS)
+- Hosted on Ubuntu server with Nginx
 
-#### Setup
+### How to use
 
-1. Make sure you have [Grunt](http://gruntjs.com/getting-started), [NPM](https://nodejs.org/en/download/) and [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) installed globally
-2. `git clone https://github.com/richardverheyen/hannahsuttondesign.com.git ~richardverheyen/hannahsuttondesign.com`
-3. `cd ~/richardverheyen/hannahsuttondesign.com`
-4. `npm install; bower install`
-5. `grunt`
-6. Go to [http://localhost:9000/](http://localhost:9000/)
-7. Open code with whatever rocks your boxers, I use [Atom](https://atom.io/): `atom .`
-8. Happy coding!
+Before you can install you will need [NVM](https://github.com/creationix/nvm), [Yarn](https://yarnpkg.com/en/) and [Git](https://git-scm.com/).
 
-#### Contact
+Installation:
 
-Get in touch on [LinkedIn](https://au.linkedin.com/in/richard-verheyen-3bb050108), [GitHub](https://github.com/richardverheyen) or <a href="mailto:richard.verheyen@gmail.com" target="_blank">richard.verheyen@gmail.com</a>.
+```
+git clone https://github.com/janwerkhoven/hannahsuttondesign.com
+cd hannahsuttondesign.com
+nvm install
+yarn install
+```
 
----
+Development:
 
-**Richard Verheyen**  
-Web Developer
+```
+gulp serve
+open http://localhost:9000
+```
+
+Production build:
+
+```
+gulp build
+```
+
+Deploy to production server (requires authenticated SSH tokens):
+
+```
+./deploy.sh
+```
+
+### Issues
+
+Found an issue with [hannahsuttondesign.com](https://hannahsuttondesign.com)? Create a [Github issue](https://github.com/janwerkhoven/hannahsuttondesign.com/issues).
+
+### Contact
+
+**Jan Werkhoven**  
+Senior Web App Engineer  
+Melbourne, Australia  
+<a href="mailto:jw@nabu.io">jw@nabu.io</a>  
+[GitHub](https://github.com/janwerkhoven), [LinkedIn](https://au.linkedin.com/pub/jan-werkhoven/10/64/b30), [Twitter](https://twitter.com/jan_werkhoven)

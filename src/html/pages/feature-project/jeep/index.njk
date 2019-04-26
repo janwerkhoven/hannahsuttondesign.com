@@ -1,0 +1,57 @@
+{% extends "layouts/page.njk" %}
+
+{% block meta %}
+  <title>Portfolio - Jeep</title>
+  <meta name="description" content="To celebrate Jeep’s 75th Anniversary, Aaron Holder of Asylum Graphics was tasked with installing a series of promotional wraps for Melbourne City Jeep. After 80 hours of drawing, Hannah completed a mural for every panel of the car which celebrated Jeep’s influence on Australia over 75 years.">
+{% endblock %}
+
+{% block id %}project-jeep{% endblock %}
+
+{% block main %}
+
+  <section id="hero">
+    <div>
+      <img src="/assets/img/portfolio/jeep/hero.jpg">
+    </div>
+  </section>
+
+  <section id="details">
+    <div>
+      <img src="/assets/img/icons/line-down_animated.svg">
+      <h2>Happy 75th Birthday, Jeep!
+        <br>We’ve wrapped you a very
+        <br>special present.</h2>
+      <img src="/assets/img/icons/line-down-dot-short-animated.svg">
+      <h3>To celebrate Jeep’s 75th Anniversary, Aaron Holder of Asylum Graphics was tasked with installing a series of promotional wraps for Melbourne City Jeep. After 80 hours of drawing, Hannah completed a mural for every panel of the car which celebrated Jeep’s influence on Australia over 75 years.</h3>
+      <h3>Artwork inspired by Drawing Book’s original concept for the ‘Etched In Mud’ Campaign</h3>
+      <h3>Art Direction &amp; Signage by Asylum Graphics</h3>
+      <img src="/assets/img/icons/small-arrow-down-animated.svg">
+    </div>
+  </section>
+
+  <section id="image-display">
+    <div>
+      <div>
+        <img src="/assets/img/portfolio/jeep/boot@2x.jpg">
+        <img src="/assets/img/portfolio/jeep/close@2x.jpg">
+      </div>
+      <img src="/assets/img/portfolio/jeep/bonnet@2x.jpg">
+    </div>
+  </section>
+
+  <section id="banner">
+    <div>
+      <h2>‘Our history is etched in mud.’
+        <br>- Jeep</h2>
+    </div>
+  </section>
+
+  <section id="hero">
+    <div>
+      <img src="/assets/img/portfolio/jeep/flat-artwork.jpg">
+    </div>
+  </section>
+
+  {% include "partials/portfolio-footer.njk" %}
+
+{% endblock %}

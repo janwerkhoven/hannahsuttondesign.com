@@ -33,11 +33,8 @@ echo "----------"
 echo "yarn install"
 yarn install
 echo "----------"
-echo "bower install"
-bower install
-echo "----------"
 echo "gulp build"
-grunt build
+gulp build
 echo "----------"
 echo "Deploy successful!"
 echo "----------"
