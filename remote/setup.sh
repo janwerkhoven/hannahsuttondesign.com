@@ -4,7 +4,7 @@ set -e
 set -o pipefail
 
 user=jw
-host=sydney.floatplane.dev
+host=singapore.floatplane.dev
 domain=hannahsuttondesign.com
 repo=git@github.com:janwerkhoven/hannahsuttondesign.com.git
 
